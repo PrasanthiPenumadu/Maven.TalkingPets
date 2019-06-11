@@ -3,6 +3,9 @@ package io.zipcoder.pets;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 import static org.junit.Assert.*;
 
 public class BirdTest {
@@ -35,11 +38,21 @@ public  void testName(){
     @Test
     public  void testType1() {
         Bird bird = new Bird("tiku", 7);
-        Assert.assertNotEquals("dog", bird.getPetType());
+        Assert.assertNotEquals("Bird", bird.getPetType());
     }
 
 
     @Test
     public void compareTo() {
+        ArrayList<Bird> petList = new ArrayList<Bird>();
+        petList.add(new Bird("tweety", 9));
+        petList.add(new Bird("Axle", 9));
+        Collections.sort(petList);
+        ArrayList<Bird> petList1=new ArrayList<Bird>();
+        petList1.add (new Bird("Axle",9));
+        petList1.add(new Bird("tweety",9));
+
+        Assert.assertEquals(petList1.get(0).petName, petList.get(0).petName);
+
     }
 }

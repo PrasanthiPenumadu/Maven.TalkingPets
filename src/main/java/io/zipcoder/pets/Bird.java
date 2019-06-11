@@ -16,11 +16,10 @@ public class Bird extends Pet implements Comparable<Pet>  {
     }
 
     public int compareTo(Pet o) {
-        for (int i = 0; i < pets.length; i++)
-            if (pets[i].getPetType().equalsIgnoreCase("bird"))
+
                 return this.petName.compareTo(o.petName);
 
-        return 0;
+
     }
 }
 
